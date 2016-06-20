@@ -1,8 +1,7 @@
 {
   "extends": "eslint:recommended",
-  "parserOptions": {
-      "ecmaVersion": 6,
-      "node" : true,
-      commonjs : true
+  "env" : {
+    "node" : true,
+    "es6" : true
   }
 }
