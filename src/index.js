@@ -2,14 +2,14 @@
 const argv = require("minimist")(process.argv.slice(2));
 
 const packagejson = require("./packagejson");
-
+const linters = require("./linters");
+const path = require("path");
 //
 //
 // input
 // analyze path|
 //
-
-const sourcePath = "./";
+const sourcePath = path.resolve("./");
 
 //check for package.json
 
@@ -17,10 +17,7 @@ const sourcePath = "./";
 
 const analyze = {
   packagejson : packagejson(sourcePath),
-  linters : {
-   present : true,
-   type: "eslint"
- }
+  linters : linters(sourcePath)
 } ;
 
 
